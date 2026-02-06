@@ -2,127 +2,134 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Aishwarya ❤️</title>
 
 <style>
 
+/* ===== BODY ===== */
 body{
-margin:0;
-padding:0;
-background:black;
-font-family:Segoe UI, sans-serif;
-overflow:hidden;
-color:white;
-text-align:center;
+    margin:0;
+    padding:0;
+    background:black;
+    font-family:Segoe UI, sans-serif;
+    overflow:hidden;
+    color:white;
+    text-align:center;
 }
 
-/* Password Screen */
+/* ===== PASSWORD SCREEN ===== */
 #passwordScreen{
-position:absolute;
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-background:black;
-z-index:10;
+    position:fixed;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:black;
+    z-index:100;
 }
 
 input{
-padding:12px;
-font-size:18px;
-border-radius:10px;
-border:none;
-outline:none;
+    padding:12px;
+    font-size:18px;
+    border-radius:10px;
+    border:none;
+    outline:none;
 }
 
 button{
-padding:12px 25px;
-font-size:18px;
-border-radius:25px;
-border:none;
-margin-top:15px;
-background:#ff4e8a;
-color:white;
-cursor:pointer;
-transition:0.3s;
+    padding:12px 25px;
+    font-size:18px;
+    border-radius:25px;
+    border:none;
+    margin:10px;
+    background:#ff4e8a;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover{
-transform:scale(1.1);
+    transform:scale(1.1);
 }
 
-/* Main Content */
+/* ===== MAIN CONTENT ===== */
 #mainContent{
-display:none;
+    display:none;
 }
 
-/* Floating Name */
+/* ===== FLOATING NAME ===== */
 .name{
-position:absolute;
-top:12%;
-width:100%;
-font-size:55px;
-font-weight:bold;
-color:#ff4e8a;
-animation:float 3s ease-in-out infinite;
+    position:absolute;
+    top:10%;
+    width:100%;
+    font-size:50px;
+    font-weight:bold;
+    color:#ff4e8a;
+    animation:float 3s ease-in-out infinite;
 }
 
 @keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
 }
 
-/* Message */
+/* ===== MESSAGE ===== */
 .message{
-position:absolute;
-top:30%;
-width:100%;
-padding:20px;
-font-size:22px;
-line-height:1.6;
+    position:absolute;
+    top:25%;
+    width:100%;
+    padding:20px;
+    font-size:20px;
+    line-height:1.6;
 }
 
-/* Proposal Button */
-.proposal{
-position:absolute;
-top:70%;
-width:100%;
+/* ===== BUTTON AREA ===== */
+.buttonArea{
+    position:absolute;
+    top:65%;
+    width:100%;
 }
 
-/* Final Message */
+/* ===== FINAL MESSAGE ===== */
 #finalMessage{
-display:none;
-position:absolute;
-top:45%;
-width:100%;
-font-size:40px;
-color:#ff4e8a;
-animation:fadeIn 2s ease-in;
+    display:none;
+    position:absolute;
+    top:40%;
+    width:100%;
+    font-size:40px;
+    color:#ff4e8a;
+    animation:fadeIn 2s ease-in;
 }
 
 @keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
+    from{opacity:0;}
+    to{opacity:1;}
 }
 
-/* Hearts */
+/* ===== HEARTS ===== */
 .heart{
-position:absolute;
-color:#ff4e8a;
-animation:fall linear infinite;
+    position:absolute;
+    color:#ff4e8a;
+    animation:fall linear infinite;
 }
 
 @keyframes fall{
-0%{
-transform:translateY(-10%);
-opacity:1;
+    0%{
+        transform:translateY(-10%);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh);
+        opacity:0;
+    }
 }
-100%{
-transform:translateY(110vh);
-opacity:0;
-}
+
+/* NO button special positioning */
+#noBtn{
+    position:absolute;
 }
 
 </style>
@@ -130,7 +137,7 @@ opacity:0;
 
 <body>
 
-<!-- Password Screen -->
+<!-- PASSWORD SCREEN -->
 <div id="passwordScreen">
 
 <h2>Enter Password ❤️</h2>
@@ -141,34 +148,38 @@ opacity:0;
 
 </div>
 
-<!-- Main Content -->
+
+<!-- MAIN CONTENT -->
 <div id="mainContent">
 
 <div class="name">
 Aishwarya ❤️
 </div>
 
+
 <div class="message" id="mainMessage">
 
 Happy Rose Day, February 7, 2026 🌹❤️<br><br>
 
-On this Rose Day, I don’t just give you a rose… I give you a piece of my heart.  
-You brought color into my life when everything felt ordinary.  
-You became the reason behind my peace, my smile, and my strength.  
+You are the most beautiful part of my life.  
+You are my peace, my happiness, and my strength.  
 
-Every moment with you feels special. Every second without you feels incomplete.  
-You are not just someone I love… you are the home my heart searched for.  
+Every heartbeat of mine belongs to you.  
+And I want to spend every moment loving you. ❤️  
 
-I may not say it every day, but today I want you to know —  
-I am yours, always and forever. ❤️🌹  
+Will you be mine forever?
 
 </div>
 
-<div class="proposal" id="proposalSection">
 
-<button onclick="sayYes()">Will you be mine forever? ❤️</button>
+<div class="buttonArea" id="buttonArea">
+
+<button onclick="sayYes()">YES ❤️</button>
+
+<button id="noBtn" onmouseover="moveNoButton()">NO 💔</button>
 
 </div>
+
 
 <div id="finalMessage">
 
@@ -179,58 +190,47 @@ Forever Yours 🌹
 
 </div>
 
+
 <script>
 
-/* Password */
+/* PASSWORD CHECK */
 function checkPassword(){
 
-var enteredPassword =
-document.getElementById("password").value;
-
-var correctPassword = "143";
+const correctPassword = "143";
+const enteredPassword = document.getElementById("password").value;
 
 if(enteredPassword === correctPassword){
 
 document.getElementById("passwordScreen").style.display="none";
-
 document.getElementById("mainContent").style.display="block";
 
 startHearts();
 
 }
-
 else{
-
 alert("Wrong password ❤️");
-
 }
 
 }
 
-/* Hearts Animation */
+
+/* HEART ANIMATION */
 function startHearts(){
 
-setInterval(function(){
+setInterval(()=>{
 
-var heart =
-document.createElement("div");
+const heart = document.createElement("div");
 
 heart.className="heart";
-
 heart.innerHTML="❤️";
 
-heart.style.left =
-Math.random()*100+"vw";
-
-heart.style.fontSize =
-(Math.random()*25+20)+"px";
-
-heart.style.animationDuration =
-(Math.random()*3+3)+"s";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+20)+"px";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
 
 document.body.appendChild(heart);
 
-setTimeout(function(){
+setTimeout(()=>{
 heart.remove();
 },6000);
 
@@ -238,14 +238,28 @@ heart.remove();
 
 }
 
-/* Proposal Button */
+
+/* YES BUTTON */
 function sayYes(){
 
-document.getElementById("proposalSection").style.display="none";
-
+document.getElementById("buttonArea").style.display="none";
 document.getElementById("mainMessage").style.display="none";
 
 document.getElementById("finalMessage").style.display="block";
+
+}
+
+
+/* NO BUTTON RUN AWAY */
+function moveNoButton(){
+
+const noBtn = document.getElementById("noBtn");
+
+const x = Math.random() * (window.innerWidth - 100);
+const y = Math.random() * (window.innerHeight - 50);
+
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
 
 }
 
