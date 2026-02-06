@@ -61,7 +61,7 @@ display:none;
 /* Floating Name */
 .name{
 position:absolute;
-top:15%;
+top:12%;
 width:100%;
 font-size:55px;
 font-weight:bold;
@@ -77,7 +77,7 @@ animation:float 3s ease-in-out infinite;
 /* Message */
 .message{
 position:absolute;
-top:35%;
+top:30%;
 width:100%;
 padding:20px;
 font-size:22px;
@@ -95,7 +95,7 @@ width:100%;
 #finalMessage{
 display:none;
 position:absolute;
-top:50%;
+top:45%;
 width:100%;
 font-size:40px;
 color:#ff4e8a;
@@ -148,40 +148,7 @@ opacity:0;
 Aishwarya ❤️
 </div>
 
-<div class="message">
-
-Happy Rose Day, February 7, 2026 🌹❤️<br><br>
-
-You came into my life and changed everything.  
-You became my peace, my happiness, and my strength.  
-
-Every heartbeat of mine belongs to you.  
-And every moment I want only you beside me. ❤️  
-
-</div>
-
-<div class="proposal">
-
-<button onclick="sayYes()">Will you be mine forever? ❤️</button>
-
-</div>
-
-<div id="finalMessage">
-
-I Love You Aishwarya ❤️<br>
-Forever Yours 🌹
-
-</div>
-</div>
-
-<div class="proposal">
-
-<button onclick="sayYes()"> For LOVE ❤️</button>
-
-</div>
-  </div>
-
-<div class="message">
+<div class="message" id="mainMessage">
 
 Happy Rose Day, February 7, 2026 🌹❤️<br><br>
 
@@ -196,6 +163,20 @@ I may not say it every day, but today I want you to know —
 I am yours, always and forever. ❤️🌹  
 
 </div>
+
+<div class="proposal" id="proposalSection">
+
+<button onclick="sayYes()">Will you be mine forever? ❤️</button>
+
+</div>
+
+<div id="finalMessage">
+
+I Love You Aishwarya ❤️<br>
+Forever Yours 🌹
+
+</div>
+
 </div>
 
 <script>
@@ -257,12 +238,12 @@ heart.remove();
 
 }
 
-/* Proposal YES button */
+/* Proposal Button */
 function sayYes(){
 
-document.querySelector(".proposal").style.display="none";
+document.getElementById("proposalSection").style.display="none";
 
-document.querySelector(".message").style.display="none";
+document.getElementById("mainMessage").style.display="none";
 
 document.getElementById("finalMessage").style.display="block";
 
@@ -272,4 +253,3 @@ document.getElementById("finalMessage").style.display="block";
 
 </body>
 </html>
-
