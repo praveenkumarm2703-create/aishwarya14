@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Aishwarya ❤️</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+    margin:0;
+    padding:0;
+    background:black;
+    font-family:Segoe UI, sans-serif;
+    overflow:hidden;
+    color:white;
+    text-align:center;
+}
+
+/* ===== PASSWORD SCREEN ===== */
+#passwordScreen{
+    position:fixed;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:black;
+    z-index:100;
+}
+
+input{
+    padding:12px;
+    font-size:18px;
+    border-radius:10px;
+    border:none;
+    outline:none;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border-radius:25px;
+    border:none;
+    margin:10px;
+    background:#ff4e8a;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+/* ===== MAIN CONTENT ===== */
+#mainContent{
+    display:none;
+}
+
+/* ===== FLOATING NAME ===== */
+.name{
+    position:absolute;
+    top:10%;
+    width:100%;
+    font-size:50px;
+    font-weight:bold;
+    color:#ff4e8a;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+}
+
+/* ===== MESSAGE ===== */
+.message{
+    position:absolute;
+    top:25%;
+    width:100%;
+    padding:20px;
+    font-size:20px;
+    line-height:1.6;
+}
+
+/* ===== BUTTON AREA ===== */
+.buttonArea{
+    position:absolute;
+    top:65%;
+    width:100%;
+}
+
+/* ===== FINAL MESSAGE ===== */
+#finalMessage{
+    display:none;
+    position:absolute;
+    top:40%;
+    width:100%;
+    font-size:40px;
+    color:#ff4e8a;
+    animation:fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* ===== HEARTS ===== */
+.heart{
+    position:absolute;
+    color:#ff4e8a;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-10%);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+
+/* NO button special positioning */
+#noBtn{
+    position:absolute;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="passwordScreen">
+
+<h2>Enter Password ❤️</h2>
+
+<input type="password" id="password" placeholder="Enter password">
+
+<button onclick="checkPassword()">Unlock</button>
+
+</div>
+
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
+<div class="name">
+Aishwarya ❤️
+</div>
+
+
+<div class="message" id="mainMessage">
+
+Happy Rose Day, February 7, 2026 🌹❤️<br><br>
+
+You are the most beautiful part of my life.  
+You are my peace, my happiness, and my strength.  
+
+Every heartbeat of mine belongs to you.  
+And I want to spend every moment loving you. ❤️  
+
+Will you be mine forever?
+
+</div>
+
+
+<div class="buttonArea" id="buttonArea">
+
+<button onclick="sayYes()">YES ❤️</button>
+
+<button id="noBtn" onmouseover="moveNoButton()">NO 💔</button>
+
+</div>
+
+
+<div id="finalMessage">
+
+I Love You Aishwarya ❤️<br>
+Forever Yours 🌹
+
+</div>
+
+</div>
+
+
+<script>
+
+/* PASSWORD CHECK */
+function checkPassword(){
+
+const correctPassword = "143";
+const enteredPassword = document.getElementById("password").value;
+
+if(enteredPassword === correctPassword){
+
+document.getElementById("passwordScreen").style.display="none";
+document.getElementById("mainContent").style.display="block";
+
+startHearts();
+
+}
+else{
+alert("Wrong password ❤️");
+}
+
+}
+
+
+/* HEART ANIMATION */
+function startHearts(){
+
+setInterval(()=>{
+
+const heart = document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+20)+"px";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},300);
+
+}
+
+
+/* YES BUTTON */
+function sayYes(){
+
+document.getElementById("buttonArea").style.display="none";
+document.getElementById("mainMessage").style.display="none";
+
+document.getElementById("finalMessage").style.display="block";
+
+}
+
+
+/* NO BUTTON RUN AWAY */
+function moveNoButton(){
+
+const noBtn = document.getElementById("noBtn");
+
+const x = Math.random() * (window.innerWidth - 100);
+const y = Math.random() * (window.innerHeight - 50);
+
+noBtn.style.left = x + "px";
+noBtn.style.top = y + "px";
+
+}
+
+</script>
+
+</body>
+</html>
